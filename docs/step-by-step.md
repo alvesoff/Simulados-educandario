@@ -2,6 +2,44 @@
 
 ## Data: 2025
 
+### Correção de Build - Migração para Dependências NPM (Janeiro 2025)
+
+#### Problema Identificado
+O build de produção estava falhanado com erros do Rollup:
+- "Could not resolve entry module 'quill'"
+- "Could not resolve entry module 'react-quill'"
+- "Could not resolve entry module 'katex'"
+
+#### Causa Raiz
+O projeto estava usando bibliotecas via CDN (index.html) mas o Vite/Rollup tentava resolver essas dependências como módulos npm durante o build de produção.
+
+#### Solução Implementada
+1. **Instalação de Dependências NPM**:
+   - `npm install quill` - Editor de texto rico
+   - `npm install katex` - Biblioteca para fórmulas matemáticas
+
+2. **Migração do QuillEditor.tsx**:
+   - Removido uso de `window.Quill`
+   - Adicionado import direto: `import Quill from 'quill'`
+   - Adicionado import de estilos: `import 'quill/dist/quill.snow.css'`
+   - Atualizado declarações globais para remover Quill
+
+3. **Limpeza do index.html**:
+   - Removido links CDN do Quill.js
+   - Mantido apenas KaTeX e MathJax via CDN (para renderização)
+
+4. **Correção do vite.config.ts**:
+   - Removido 'react-quill' do manualChunks (não usado)
+   - Mantido 'quill' e 'katex' no chunk 'editor'
+
+#### Resultado
+- ✅ Build de produção funcionando corretamente
+- ✅ Funcionalidade do editor mantida
+- ✅ Otimização de chunks preservada
+- ✅ Compatibilidade com deploy mantida
+
+---
+
 ### Funcionalidade Removida: Modal de Questão Personalizada (Janeiro 2025)
 
 #### Motivo da Remoção
