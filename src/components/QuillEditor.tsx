@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
 
-// Declaração de tipos para Quill e MathJax
+// Declaração de tipos para MathJax
 declare global {
   interface Window {
-    Quill: any;
     MathJax: any;
   }
 }
@@ -50,7 +51,7 @@ const QuillEditor = forwardRef<QuillEditorRef, QuillEditorProps>((
   };
 
   const initializeQuill = () => {
-    if (!window.Quill || !editorRef.current || quillRef.current) return;
+    if (!editorRef.current || quillRef.current) return;
 
     // Verificar se o editor já foi inicializado
     if (editorRef.current.getAttribute('data-quill-initialized') === 'true') {
@@ -77,7 +78,7 @@ const QuillEditor = forwardRef<QuillEditorRef, QuillEditorProps>((
     const toolbarContainer = document.getElementById(toolbarId.current);
     
     // Inicializar Quill com toolbar customizada
-    quillRef.current = new window.Quill(editorRef.current, {
+    quillRef.current = new Quill(editorRef.current, {
       theme: 'snow',
       placeholder,
       modules: {

@@ -24,7 +24,7 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
           ui: ['@heroicons/react', 'lucide-react'],
-          editor: ['quill', 'react-quill', 'katex']
+          editor: ['quill', 'katex']
         }
       }
     }
