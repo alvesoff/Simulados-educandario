@@ -1,0 +1,157 @@
+/* Estilos para renderização segura de HTML */
+.safe-html-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Estilos para imagens */
+.safe-html-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para tabelas */
+.safe-html-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.safe-html-content td,
+.safe-html-content th {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.safe-html-content th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.safe-html-content tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Estilos para listas */
+.safe-html-content ul,
+.safe-html-content ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.safe-html-content li {
+  margin: 4px 0;
+}
+
+/* Estilos para código */
+.safe-html-content pre {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.safe-html-content code {
+  background-color: #f3f4f6;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.safe-html-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Estilos para citações */
+.safe-html-content blockquote {
+  border-left: 4px solid #3b82f6;
+  margin: 16px 0;
+  padding: 8px 16px;
+  background-color: #f8fafc;
+  font-style: italic;
+}
+
+/* Estilos para títulos */
+.safe-html-content h1,
+.safe-html-content h2,
+.safe-html-content h3,
+.safe-html-content h4,
+.safe-html-content h5,
+.safe-html-content h6 {
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.safe-html-content h1 { font-size: 1.5em; }
+.safe-html-content h2 { font-size: 1.3em; }
+.safe-html-content h3 { font-size: 1.2em; }
+.safe-html-content h4 { font-size: 1.1em; }
+.safe-html-content h5 { font-size: 1em; }
+.safe-html-content h6 { font-size: 0.9em; }
+
+/* Estilos para parágrafos */
+.safe-html-content p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Estilos para formatação de texto */
+.safe-html-content strong,
+.safe-html-content b {
+  font-weight: 600;
+}
+
+.safe-html-content em,
+.safe-html-content i {
+  font-style: italic;
+}
+
+.safe-html-content u {
+  text-decoration: underline;
+}
+
+.safe-html-content mark {
+  background-color: #fef3c7;
+  padding: 1px 2px;
+}
+
+.safe-html-content del {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.safe-html-content ins {
+  text-decoration: underline;
+  background-color: #d1fae5;
+}
+
+/* Estilos para subscrito e sobrescrito */
+.safe-html-content sub,
+.safe-html-content sup {
+  font-size: 0.8em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.safe-html-content sup {
+  top: -0.5em;
+}
+
+.safe-html-content sub {
+  bottom: -0.25em;
+}

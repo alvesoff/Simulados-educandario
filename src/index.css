@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para renderização segura de HTML */
+.safe-html-content {
+  line-height: 1.6;
+}
+
+.safe-html-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.safe-html-content p {
+  margin: 0.5rem 0;
+}
+
+.safe-html-content strong,
+.safe-html-content b {
+  font-weight: 600;
+}
+
+.safe-html-content em,
+.safe-html-content i {
+  font-style: italic;
+}
+
+.safe-html-content u {
+  text-decoration: underline;
+}
+
+.safe-html-content mark {
+  background-color: #fef08a;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+.safe-html-content h1,
+.safe-html-content h2,
+.safe-html-content h3,
+.safe-html-content h4,
+.safe-html-content h5,
+.safe-html-content h6 {
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.safe-html-content h1 { font-size: 1.5rem; }
+.safe-html-content h2 { font-size: 1.25rem; }
+.safe-html-content h3 { font-size: 1.125rem; }
+
+.safe-html-content ul,
+.safe-html-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.safe-html-content li {
+  margin: 0.25rem 0;
+}
+
+.safe-html-content blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.safe-html-content pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.safe-html-content code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+.safe-html-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.safe-html-content th,
+.safe-html-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.safe-html-content th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.safe-html-content sub {
+  vertical-align: sub;
+  font-size: 0.75rem;
+}
+
+.safe-html-content sup {
+  vertical-align: super;
+  font-size: 0.75rem;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none px-4 py-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus-visible:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus-visible:ring-secondary-500;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .card {
+    @apply rounded-lg border border-gray-200 bg-white shadow-sm;
+  }
+}
